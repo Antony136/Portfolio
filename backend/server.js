@@ -4,6 +4,7 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const contactRoutes = require('./routes/contactRoutes');
 const blogRoutes = require('./routes/blogRoutes');
+const healthRoutes = require('./routes/healthRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -21,10 +22,15 @@ app.use(express.urlencoded({ extended: false }));
 // Routes
 app.use('/api/contact', contactRoutes);
 app.use('/api/blogs', blogRoutes);
+app.use('/api/health', healthRoutes);
 
 // Basic Route for testing
 app.get('/', (req, res) => {
-    res.send('Portfolio API is running...');
+    res.json({
+        status: 'ok',
+        message: 'Portfolio API is running...',
+        timestamp: new Date().toISOString(),
+    });
 });
 
 const PORT = process.env.PORT || 5000;
