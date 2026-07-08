@@ -5,6 +5,7 @@ const connectDB = require('./config/db');
 const contactRoutes = require('./routes/contactRoutes');
 const blogRoutes = require('./routes/blogRoutes');
 const healthRoutes = require('./routes/healthRoutes');
+const statsRoutes = require('./routes/statsRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -23,6 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/api/contact', contactRoutes);
 app.use('/api/blogs', blogRoutes);
 app.use('/api/health', healthRoutes);
+app.use('/api/stats', statsRoutes);
 
 // Basic Route for testing
 app.get('/', (req, res) => {
