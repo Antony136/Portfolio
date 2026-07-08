@@ -20,9 +20,9 @@ const App = () => {
       <Router>
       <div className="app-container">
         <SEO 
-          title="Antony Abishek A | Full-Stack Developer" 
-          description="Crafting digital experiences. Full-stack developer specializing in building modern, scalable, and user-centric web applications using the MERN stack."
-          keywords="Antony Abishek A, Full-Stack Developer, MERN Stack, React, Node.js, Next.js, Portfolio"
+          title="Antony Abishek A | Final-Year CSE Student | Full-Stack & AI Developer" 
+          description="Final-year Computer Science Engineering student building full-stack web applications and AI-driven solutions that solve real-world problems."
+          keywords="Antony Abishek A, Final-Year CSE Student, Full-Stack Developer, AI Developer, MERN Stack, React, Node.js, Portfolio"
           url="https://antonyabishek.vercel.app/"
         />
         <CustomCursor />

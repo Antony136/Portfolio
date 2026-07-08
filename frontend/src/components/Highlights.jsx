@@ -14,38 +14,38 @@ import {
 const highlights = [
   {
     icon: <Globe size={24} />,
-    title: "Multiple Full-Stack Applications",
-    description: "Built scalable web applications using the React + Node.js + Express.js + MongoDB stack, focusing on clean architecture and responsive user interfaces.",
+    title: "Full-Stack Development Experience",
+    description: "Built and deployed production-ready MERN applications with authentication, REST APIs, CRUD workflows, and responsive user interfaces.",
     color: "#a855f7"
   },
   {
     icon: <Brain size={24} />,
     title: "Applied AI & Computer Vision",
-    description: "Implemented intelligent systems combining machine learning models and web platforms to solve practical problems like traffic monitoring and anomaly detection.",
+    description: "Developed AI-powered solutions that combine web interfaces with practical analysis, computer vision, and real-world problem-solving.",
     color: "#ec4899"
   },
   {
     icon: <BarChart3 size={24} />,
-    title: "Interactive Data Dashboards",
-    description: "Created dynamic dashboards for monitoring analytics, enabling users to visualize system insights in real time using modern frontend frameworks.",
+    title: "Internship Exposure",
+    description: "Completed a full-stack developer internship where I built and deployed multiple web applications using modern tools and deployment practices.",
     color: "#3b82f6"
   },
   {
     icon: <LinkIcon size={24} />,
-    title: "AI-Driven Traffic Management System",
-    description: "Developed an intelligent traffic monitoring platform using computer vision to analyze real-time traffic flow, detect congestion, and visualize insights through a live dashboard.",
+    title: "Hackathons & Innovation",
+    description: "Participated in multiple hackathons and earned a special mention for an AI-driven traffic management solution.",
     color: "#10b981"
   },
   {
     icon: <Terminal size={24} />,
-    title: "Strong Multi-Language Foundation",
-    description: "Experienced in multiple programming languages including C, C++, Java, Python, JavaScript, and TypeScript, enabling development across different system layers.",
+    title: "Problem Solving & DSA",
+    description: "Consistently practiced data structures and algorithms, with 270+ problems solved on LeetCode and a strong foundation in logical problem-solving.",
     color: "#f59e0b"
   },
   {
     icon: <Users size={24} />,
-    title: "Collaborative & Problem-Solving Focus",
-    description: "Comfortable working in team environments, contributing to design discussions, debugging complex issues, and delivering efficient software solutions.",
+    title: "Collaborative & Product-Focused",
+    description: "Work comfortably across frontend, backend, and team environments, with a strong focus on building useful software that people can trust.",
     color: "#ef4444"
   }
 ];

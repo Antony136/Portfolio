@@ -43,7 +43,8 @@ const Contact = () => {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '50px' }}>
           <h2 style={{ fontSize: '3rem', marginBottom: '15px' }}>Get in <span className="gradient-text">Touch</span></h2>
-          <p style={{ color: 'var(--text-secondary)', marginBottom: '30px' }}>Have a project in mind? Let's talk about it.</p>
+          <p style={{ color: 'var(--text-secondary)', marginBottom: '10px' }}>Have a project, idea, or opportunity in mind? I’d love to connect and build something meaningful together.</p>
+          <p style={{ color: 'var(--text-secondary)', marginBottom: '30px' }}>Open to internships, collaborations, and opportunities to create practical digital experiences.</p>
           
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', flexWrap: 'wrap', marginBottom: '20px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-primary)' }}>

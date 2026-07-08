@@ -33,10 +33,10 @@ const About = () => {
         <div>
           <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '30px' }}>About <span className="gradient-text">Me</span></h2>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '20px', fontSize: '1.1rem' }}>
-            I am a 3rd-year Computer Science Engineering student with hands-on experience in full-stack web development using MERN and TypeScript.
+            I am a final-year Computer Science Engineering student building full-stack web applications, AI-driven experiences, and practical software products.
           </p>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '30px', fontSize: '1.1rem' }}>
-            I am passionate about building scalable applications, solving real-world problems through technology, and continuously learning modern tools in AIML and Web Development. I'm a strong team collaborator with a drive to deliver efficient, user-focused solutions.
+            I enjoy turning ideas into scalable applications with thoughtful UI, clean architecture, and real-world impact. My focus lies at the intersection of web development, intelligent systems, and product thinking.
           </p>
           
           <div style={{ display: 'flex', gap: '15px', marginBottom: '40px', flexWrap: 'wrap' }}>
@@ -53,7 +53,7 @@ const About = () => {
             <div style={{ marginBottom: '15px' }}>
               <p style={{ color: 'var(--text-primary)', fontWeight: '600' }}>B.E. Computer Science Engineering</p>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Sri Venkateswara College of Engineering • 2023 - Present</p>
-              <p style={{ color: 'var(--accent-primary)', fontSize: '0.9rem', fontWeight: '500', marginTop: '4px' }}>CGPA: 8.67 / 10</p>
+              <p style={{ color: 'var(--accent-primary)', fontSize: '0.9rem', fontWeight: '500', marginTop: '4px' }}>CGPA: 8.74 / 10</p>
             </div>
             <div>
               <p style={{ color: 'var(--text-primary)', fontWeight: '600' }}>Higher Secondary (Computer Science & Maths)</p>
@@ -93,43 +93,34 @@ const About = () => {
                 <span style={{ animation: 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite', position: 'absolute', display: 'inline-flex', height: '100%', width: '100%', borderRadius: '9999px', backgroundColor: 'var(--accent-primary)', opacity: 0.75 }}></span>
                 <span style={{ position: 'relative', display: 'inline-flex', borderRadius: '9999px', height: '12px', width: '12px', backgroundColor: 'var(--accent-primary)' }}></span>
               </span>
-              Currently Building
+              Currently Exploring
             </h3>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '15px' }}>
               <li style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-primary)', fontWeight: '600', fontSize: '1rem' }}>
                   <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-primary)' }}></div>
-                  AI Traffic Anomaly Detection System
+                  AI-powered web applications
                 </div>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', paddingLeft: '18px', lineHeight: '1.4' }}>
-                  Computer vision system to analyze traffic footage and automatically detect accidents and congestion.
+                  Building practical solutions that combine intelligent systems with clean, modern interfaces.
                 </p>
               </li>
               <li style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-primary)', fontWeight: '600', fontSize: '1rem' }}>
                   <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-secondary)' }}></div>
-                  Professional Portfolio Website
+                  Computer vision + real-world impact
                 </div>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', paddingLeft: '18px', lineHeight: '1.4' }}>
-                  A responsive full-stack platform showcasing projects and technical skills with integrated blog.
+                  Exploring how visual intelligence can be turned into useful tools for people and businesses.
                 </p>
               </li>
               <li style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-primary)', fontWeight: '600', fontSize: '1rem' }}>
                   <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-primary)' }}></div>
-                  Client Lead Management (Mini CRM)
+                  Scalable full-stack systems
                 </div>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', paddingLeft: '18px', lineHeight: '1.4' }}>
-                  Lightweight CRM for tracking leads, managing follow-ups, and organizing client interactions.
-                </p>
-              </li>
-              <li style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-primary)', fontWeight: '600', fontSize: '1rem' }}>
-                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-secondary)' }}></div>
-                  Local Business Web Development
-                </div>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', paddingLeft: '18px', lineHeight: '1.4' }}>
-                  Modern, SEO-friendly web presence for local businesses to enhance customer engagement.
+                  Focusing on architecture, maintainability, and thoughtful product development from idea to deployment.
                 </p>
               </li>
             </ul>

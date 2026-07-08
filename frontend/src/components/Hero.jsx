@@ -21,18 +21,21 @@ const Hero = () => {
           Hi, I am Antony Abishek A
         </span>
         <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)', lineHeight: '1.1', marginBottom: '15px' }}>
-          Building Scalable Web <br /> & <span className="gradient-text">AI Solutions</span>
+          Building Full-Stack Web <br /> & <span className="gradient-text">AI Products</span>
         </h1>
         <p style={{ color: 'var(--text-primary)', fontSize: '1.4rem', fontWeight: '500', marginBottom: '10px' }}>
-          Full Stack & AI Developer | Computer Vision Enthusiast
+          Final-Year CSE Student | MERN Stack | AI & Computer Vision
         </p>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto 40px' }}>
-          Crafting intelligent web systems and scalable applications that solve real-world problems.
+        <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto 10px' }}>
+          I design and build scalable web applications, practical AI experiences, and user-focused digital products.
+        </p>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', maxWidth: '620px', margin: '0 auto 40px' }}>
+          Open to internships, collaborations, and opportunities to build something meaningful.
         </p>
         
         <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
           <a href="#projects" className="glass-card" style={{ padding: '15px 30px', textDecoration: 'none', color: 'var(--bg-primary)', background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))', display: 'flex', alignItems: 'center', gap: '10px', transition: 'var(--transition)', fontWeight: 'bold' }}>
-            View My Work <ArrowRight size={20} />
+            View My Projects <ArrowRight size={20} />
           </a>
           <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
             <a href="https://github.com/Antony136" aria-label="GitHub Profile" target="_blank" rel="noreferrer" className="glass-card circular-icon-link" style={{ padding: '12px', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}><Github size={20} /></a>
