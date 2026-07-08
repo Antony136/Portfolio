@@ -6,3 +6,5 @@ dist-ssr
 .env.*
 !.env.example
 .DS_Store
+PORTFOLIO_REVIEW_AND_UPGRADE_PLAN.md
+PORTFOLIO_IMPROVEMENTS.md

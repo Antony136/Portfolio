@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Database, Layout, Smartphone } from 'lucide-react';
+import { Code2, Database, Layout, Smartphone, Download } from 'lucide-react';
 
 const About = () => {
   const skills = [
@@ -23,9 +23,29 @@ const About = () => {
           </p>
 
           <div style={{ display: 'flex', gap: '15px', marginBottom: '40px', flexWrap: 'wrap' }}>
-            <a href="https://drive.google.com/file/d/1vYfJtgdO4opRUJ02gmacTRD81ntBWG7G/view?usp=drive_link" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px 24px', textDecoration: 'none', color: 'white', display: 'flex', alignItems: 'center', gap: '10px', background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))', border: 'none', fontWeight: 'bold', borderRadius: '10px' }}>
+            <motion.a 
+              href="https://drive.google.com/file/d/1vYfJtgdO4opRUJ02gmacTRD81ntBWG7G/view?usp=drive_link" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="glass-card" 
+              style={{ padding: '12px 24px', textDecoration: 'none', color: 'white', display: 'flex', alignItems: 'center', gap: '10px', background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))', border: 'none', fontWeight: 'bold', borderRadius: '10px' }}
+              whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(99, 102, 241, 0.4)' }}
+              whileTap={{ scale: 0.95 }}
+            >
               View Resume
-            </a>
+            </motion.a>
+            <motion.a 
+              href="https://drive.google.com/uc?export=download&id=1vYfJtgdO4opRUJ02gmacTRD81ntBWG7G" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="glass-card" 
+              style={{ padding: '12px 24px', textDecoration: 'none', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '10px', background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', fontWeight: 'bold', borderRadius: '10px' }}
+              whileHover={{ scale: 1.05, background: 'rgba(255, 255, 255, 0.08)', borderColor: 'var(--accent-primary)', boxShadow: '0 0 20px rgba(99, 102, 241, 0.2)' }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Download size={18} />
+              Download Resume
+            </motion.a>
           </div>
 
           <div className="glass-card" style={{ padding: '25px', marginBottom: '20px' }}>
