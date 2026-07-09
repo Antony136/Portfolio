@@ -28,10 +28,6 @@ router.get('/', async (req, res) => {
                                         submissions
                                     }
                                 }
-                                profile {
-                                    ranking
-                                    reputation
-                                }
                             }
                         }
                     `,
@@ -53,9 +49,7 @@ router.get('/', async (req, res) => {
                         totalQuestions: getTotal('All'),
                         easy: { solved: getCount('Easy'), total: getTotal('Easy') },
                         medium: { solved: getCount('Medium'), total: getTotal('Medium') },
-                        hard: { solved: getCount('Hard'), total: getTotal('Hard') },
-                        ranking: rawData.data.matchedUser.profile.ranking?.toLocaleString() || '124,532',
-                        reputation: rawData.data.matchedUser.profile.reputation || 0
+                        hard: { solved: getCount('Hard'), total: getTotal('Hard') }
                     };
                 }
             }
@@ -66,7 +60,6 @@ router.get('/', async (req, res) => {
         // 2. Fetch GitHub Profile and Repos
         let githubData = {
             publicRepos: 24,
-            stars: 18,
             totalCommits: '840+',
             pullRequests: 42,
             contributionsThisYear: 624,
@@ -83,11 +76,8 @@ router.get('/', async (req, res) => {
 
             if (profileRes.ok && reposRes.ok) {
                 const profile = await profileRes.json();
-                const repos = await reposRes.json();
-                
-                const stars = repos.reduce((acc, repo) => acc + (repo.stargazers_count || 0), 0);
+                await reposRes.json();
                 githubData.publicRepos = profile.public_repos;
-                githubData.stars = stars;
             }
         } catch (err) {
             console.error('Error fetching GitHub profile/repos:', err.message);

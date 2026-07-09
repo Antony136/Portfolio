@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Github, Flame, Star, GitPullRequest, GitCommit, Activity, ExternalLink, Zap } from 'lucide-react';
+import { Code2, Github, Flame, GitPullRequest, GitCommit, Activity, ExternalLink } from 'lucide-react';
 
 /* ─────────────────────────────────────────────
    Stat Cell – used in both cards
@@ -146,13 +146,11 @@ const CodingStats = () => {
       ranking: '124,532',
       acceptance: '64.2%',
       activeStreak: 32,
-      rating: '1,684',
     },
     github: {
       username: 'Antony136',
       totalCommits: '840+',
       publicRepos: 24,
-      stars: 18,
       pullRequests: 42,
       contributionsThisYear: 624,
     },
@@ -213,14 +211,13 @@ const CodingStats = () => {
         ]);
 
         let githubData = {
-          publicRepos: 24, stars: 18, totalCommits: '840+', pullRequests: 42, contributionsThisYear: 624,
+          publicRepos: 24, totalCommits: '840+', pullRequests: 42, contributionsThisYear: 624,
         };
 
         if (ghProfileRes.ok && ghReposRes.ok) {
           const profile = await ghProfileRes.json();
           const repos   = await ghReposRes.json();
           githubData.publicRepos = profile.public_repos;
-          githubData.stars       = repos.reduce((a, r) => a + (r.stargazers_count || 0), 0);
         }
 
         try {
@@ -427,10 +424,6 @@ const CodingStats = () => {
               borderTop: '1px solid var(--glass-border)',
               marginBottom: '28px',
             }}>
-              <StatCell
-                label="Contest Rating"
-                value={stats.leetcode.rating}
-              />
               <StatCell
                 label="Acceptance"
                 value={stats.leetcode.acceptance}
@@ -723,17 +716,6 @@ const CodingStats = () => {
                 value={stats.github.pullRequests}
                 icon={<GitPullRequest />}
                 accent="#10b981"
-              />
-              <StatCell
-                label="Stars"
-                value={
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                    <Star size={13} color="#f59e0b" fill="#f59e0b" />
-                    {stats.github.stars}
-                  </span>
-                }
-                icon={<Zap />}
-                accent="#f59e0b"
               />
               <StatCell
                 label="Streak"
