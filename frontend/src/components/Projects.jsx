@@ -11,6 +11,7 @@ const projects = [
     tech: ["React.js", "Node.js", "PostgreSQL", "Computer Vision", "YOLOv8s", "ESP32", "IoT Sensors"],
     github: "https://github.com/Antony136/Roadzen-view",
     live: "#",
+    demoVideo: "https://res.cloudinary.com/el7bfwrd/video/upload/v1784050937/Traffic_demo_ugmuah.mp4",
     details: {
       problemStatement: "Enhance Urban Living Through AI-Driven Traffic Management System. Urban areas face severe traffic congestion leading to increased pollution, delayed emergency responses, and economic losses. Traditional timed signals cannot adapt to dynamic traffic flows.",
       features: [
@@ -160,6 +161,7 @@ const projects = [
     tech: ["Electron", "React.js", "FastAPI", "Python", "PyTorch", "SQLite", "PostgreSQL", "Grad-CAM"],
     github: "https://github.com/Antony136/Diabetic-Retinopathy-v2",
     live: "#",
+    demoVideo: "https://res.cloudinary.com/el7bfwrd/video/upload/v1784045262/Diabetic_Retinopathy_demo_nsp42b.mp4",
     details: {
       problemStatement: "Diabetic retinopathy screening often depends on limited access to specialist review and reliable connectivity. This project creates a professional medical AI solution that empowers clinicians to screen, track, and prioritize patients even in offline environments.",
       features: [
@@ -209,6 +211,7 @@ const projects = [
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Recharts", "Tailwind CSS"],
     github: "#",
     live: "#",
+    demoVideo: "https://res.cloudinary.com/el7bfwrd/video/upload/v1784020287/Mini_Crm_gk7suo.mp4",
     details: {
       problemStatement: "Small businesses and agencies often lose leads because there is no structured way to manage incoming inquiries. This project solves that by combining a public lead capture flow with a secure admin dashboard for full pipeline oversight.",
       features: [
@@ -257,6 +260,7 @@ const projects = [
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Framer Motion", "Tailwind CSS"],
     github: "https://github.com/Antony136/Restaurant-Website",
     live: "#",
+    demoVideo: "https://res.cloudinary.com/el7bfwrd/video/upload/v1784020508/Simple-Restaurant_cmxjzc.mp4",
     details: {
       problemStatement: "Restaurants need a modern way to present their brand, manage reservations, handle orders, and give guests a smooth experience from discovery to booking. This project builds that experience into a full-stack web platform.",
       features: [

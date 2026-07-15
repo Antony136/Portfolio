@@ -76,6 +76,20 @@ const ProjectModal = ({ project, onClose }) => {
 
           <div style={{ borderTop: '1px solid var(--glass-border)', paddingTop: '30px', display: 'flex', flexDirection: 'column', gap: '30px' }}>
             
+            {/* Demo Video */}
+            {project.demoVideo && (
+              <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.3)', backgroundColor: '#000' }}>
+                <video 
+                  src={project.demoVideo} 
+                  autoPlay 
+                  loop 
+                  muted 
+                  controls 
+                  style={{ width: '100%', maxHeight: '60vh', display: 'block', objectFit: 'contain' }} 
+                />
+              </div>
+            )}
+
             {/* Standard Description (if no detailed sections) */}
             {!project.details && (
               <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.8' }}>{project.description}</p>
