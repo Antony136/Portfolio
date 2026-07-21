@@ -139,13 +139,13 @@ const LoadingOverlay = () => (
 const CodingStats = () => {
   const [stats, setStats] = useState({
     leetcode: {
-      totalSolved: 270,
-      easy:   { solved: 110, total: 200, color: '#10b981' },
-      medium: { solved: 130, total: 300, color: '#f59e0b' },
-      hard:   { solved: 30,  total: 100, color: '#ef4444' },
-      ranking: '124,532',
-      acceptance: '64.2%',
-      activeStreak: 32,
+      totalSolved: 306,
+      easy:   { solved: 188, total: 956,  color: '#10b981' },
+      medium: { solved: 114, total: 2088, color: '#f59e0b' },
+      hard:   { solved: 4,   total: 955,  color: '#ef4444' },
+      ranking: '467,428',
+      acceptance: '58.7%',
+      activeStreak: 47,
     },
     github: {
       username: 'Antony136',
@@ -247,19 +247,39 @@ const CodingStats = () => {
 
         let leetcodeData = {};
         try {
-          const lcRes = await fetch('https://leetcode-stats-api.herokuapp.com/Antony_136');
-          if (lcRes.ok) {
-            const lc = await lcRes.json();
-            if (lc.status === 'success') {
-              leetcodeData = {
-                totalSolved:   lc.totalSolved,
-                easy:   { solved: lc.easySolved,   total: lc.totalEasy   },
-                medium: { solved: lc.mediumSolved,  total: lc.totalMedium },
-                hard:   { solved: lc.hardSolved,    total: lc.totalHard   },
-                ranking:    lc.ranking?.toLocaleString() || '124,532',
-                acceptance: lc.acceptanceRate ? `${lc.acceptanceRate}%` : '64.2%',
-              };
+          const [lcSolvedRes, lcProfileRes, lcCalendarRes] = await Promise.all([
+            fetch('https://alfa-leetcode-api.onrender.com/Antony_136/solved'),
+            fetch('https://alfa-leetcode-api.onrender.com/Antony_136'),
+            fetch('https://alfa-leetcode-api.onrender.com/Antony_136/calendar'),
+          ]);
+
+          if (lcSolvedRes.ok && lcProfileRes.ok) {
+            const lcSolved   = await lcSolvedRes.json();
+            const lcProfile  = await lcProfileRes.json();
+
+            let acceptanceRate = '58.7%';
+            if (lcSolved.acSubmissionNum && lcSolved.totalSubmissionNum) {
+              const acCount  = lcSolved.acSubmissionNum.find(s => s.difficulty === 'All')?.submissions || 0;
+              const subCount = lcSolved.totalSubmissionNum.find(s => s.difficulty === 'All')?.submissions || 0;
+              if (subCount > 0) acceptanceRate = `${((acCount / subCount) * 100).toFixed(1)}%`;
             }
+
+            // Pull live streak from calendar endpoint
+            let activeStreak = 47;
+            if (lcCalendarRes.ok) {
+              const lcCal = await lcCalendarRes.json();
+              if (lcCal.streak !== undefined) activeStreak = lcCal.streak;
+            }
+
+            leetcodeData = {
+              totalSolved: lcSolved.solvedProblem,
+              easy:        { solved: lcSolved.easySolved,   total: 956  },
+              medium:      { solved: lcSolved.mediumSolved, total: 2088 },
+              hard:        { solved: lcSolved.hardSolved,   total: 955  },
+              ranking:     lcProfile.ranking?.toLocaleString() || '467,428',
+              acceptance:  acceptanceRate,
+              activeStreak,
+            };
           }
         } catch (e) { /* silent */ }
 
@@ -425,9 +445,9 @@ const CodingStats = () => {
               marginBottom: '28px',
             }}>
               <StatCell
-                label="Acceptance"
-                value={stats.leetcode.acceptance}
-                accent="#10b981"
+                label="Global Rank"
+                value={`#${stats.leetcode.ranking}`}
+                accent="#a855f7"
               />
               <StatCell
                 label="Streak"
@@ -438,6 +458,11 @@ const CodingStats = () => {
                   </span>
                 }
                 accent="#ef4444"
+              />
+              <StatCell
+                label="Acceptance"
+                value={stats.leetcode.acceptance}
+                accent="#10b981"
               />
             </div>
 
