@@ -4,8 +4,15 @@ import { motion } from 'framer-motion';
 const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
+    // Check for touch device to disable custom cursor
+    if (window.matchMedia("(pointer: coarse)").matches || 'ontouchstart' in window) {
+      setIsTouchDevice(true);
+      return;
+    }
+
     const updateMousePosition = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -32,8 +39,10 @@ const CustomCursor = () => {
     };
   }, []);
 
-  // Hide the default cursor globally when this component mounts
+  // Hide the default cursor globally when this component mounts, only if not touch
   useEffect(() => {
+    if (isTouchDevice) return;
+    
     document.body.style.cursor = 'none';
     const iterables = document.querySelectorAll('a, button');
     iterables.forEach(el => el.style.cursor = 'none');
@@ -42,7 +51,10 @@ const CustomCursor = () => {
       document.body.style.cursor = 'auto';
       iterables.forEach(el => el.style.cursor = 'pointer');
     };
-  }, []);
+  }, [isTouchDevice]);
+
+  if (isTouchDevice) return null;
+
 
   return (
     <>

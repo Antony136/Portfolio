@@ -35,16 +35,14 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-card py-4 rounded-none border-t-0 border-x-0' : 'bg-transparent py-6'}`} style={{ paddingLeft: '20px', paddingRight: '20px' }}>
+    <header className={`transition-all duration-300 ${isScrolled ? 'glass-card rounded-none border-t-0 border-x-0' : 'bg-transparent'}`} style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 50, padding: isScrolled ? '15px 20px' : '25px 20px' }}>
       <div className="container mx-auto flex justify-between items-center" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h1 className="text-2xl font-bold gradient-text" style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Portfolio.</h1>
         
-        {/* Desktop Nav */}
-        <nav className="desktop-nav" style={{ display: 'none' }}>
-           {/* We will handle display via standard CSS logic if needed, but for now using inline for simplicity where possible */}
-        </nav>
-
         <style>{`
+          .desktop-nav {
+            display: none;
+          }
           .nav-link {
             color: var(--text-secondary);
             text-decoration: none;
@@ -82,9 +80,9 @@ const Header = () => {
       
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="mobile-menu glass-card" style={{ position: 'absolute', top: '100%', left: 0, width: '100%', padding: '20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
+        <div className="mobile-menu" style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', padding: '100px 20px 20px', display: 'flex', flexDirection: 'column', gap: '25px', zIndex: 40, alignItems: 'center', background: 'var(--bg-primary)', overflowY: 'auto' }}>
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} onClick={() => setIsMenuOpen(false)} style={{ color: 'var(--text-primary)', textDecoration: 'none', fontSize: '1.1rem' }}>{link.name}</a>
+            <a key={link.name} href={link.href} onClick={() => setIsMenuOpen(false)} style={{ color: 'var(--text-primary)', textDecoration: 'none', fontSize: '1.5rem', fontWeight: 'bold' }}>{link.name}</a>
           ))}
         </div>
       )}

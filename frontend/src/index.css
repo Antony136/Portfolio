@@ -159,6 +159,12 @@ body[style*="cursor: none"] * {
   /* Prevent horizontal scroll on mobile */
   .app-container {
     overflow-x: hidden;
+    width: 100vw;
+  }
+
+  /* Prevent iOS zoom on focus for inputs */
+  input, textarea, select {
+    font-size: 16px !important;
   }
 }
 

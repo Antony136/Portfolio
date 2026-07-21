@@ -1,12 +1,22 @@
-import React, { useRef } from 'react';
+import React, { useRef, useMemo, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as random from 'maath/random/dist/maath-random.esm';
 
 const ParticleGlobe = (props) => {
   const ref = useRef();
+  
+  // Use fewer particles on mobile for better performance
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
   // Generate random points in a sphere
-  const sphere = random.inSphere(new Float32Array(5000 * 3), { radius: 1.5 });
+  const sphere = useMemo(() => {
+    const count = isMobile ? 1500 : 5000;
+    return random.inSphere(new Float32Array(count * 3), { radius: 1.5 });
+  }, [isMobile]);
 
   useFrame((state, delta) => {
     // Slowly rotate the sphere
